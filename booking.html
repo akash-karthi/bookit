@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <title>BookIt</title>
+    <style>
+        body {
+            margin: 0%;
+            background-color: #f2f2f2;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .nav-bar {
+            display: flex;
+            margin: 0px;
+            height: 60px;
+            background-color: #394A51;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-bar img {
+            /* margin-top: 2vh; */
+            /* margin-left: 12vw; */
+            width: 92.15px;
+            height: 27.933px;
+        }
+
+        #Search {
+            margin-left: 3vw;
+            width: 496px;
+            height: 30px;
+            /* margin-top: 2vh; */
+            background-color: white;
+            border-radius: 2vw;
+            font-size: small;
+        }
+
+        #Search-button {
+            display: inline-flex;
+            position: relative;
+            /* top: 2.3vh; */
+            right: 95px;
+            width: 92.15px;
+            height: 24.433px;
+            font-size: medium;
+            text-align: center;
+            border-radius: 2vw;
+            background-color: #394a51;
+            color: white;
+            justify-items: center;
+        }
+
+        #mag {
+            display: inline;
+        }
+
+        #Search-button:focus {
+            border-color: transparent;
+            outline: none;
+        }
+
+        #Search-button:hover {
+            background-color: #222324;
+        }
+
+        #city {
+            width: 92.15px;
+            height: 24px;
+            margin-left: 18vw;
+            /* margin-top: 2.5vh; */
+            border-radius: 20px;
+            appearance: none;
+            background-image: url('expand-more.png');
+            background-repeat: no-repeat;
+            background-position-x: 60px;
+            background-position-y: 6px;
+            background-color: white;
+        }
+
+        .sign-in {
+            /* margin-top: 2.5vh; */
+            display: inline-flex;
+            height: 24px;
+            margin-left: 4vw;
+            width: 92.15px;
+            border-radius: 2vw;
+            background-color: rgb(224, 62, 62);
+            color: white;
+            font-size: medium;
+            border: none;
+            justify-content: center;
+        }
+
+        .sign-in:focus {
+            border-color: transparent;
+            outline: none;
+        }
+
+        .sign-in:hover {
+            background-color: rgb(214, 13, 13);
+            cursor: pointer;
+        }
+
+        #Search:focus {
+            border-color: transparent;
+            outline: none;
+        }
+
+        .nav-bar-2 {
+            display: flex;
+            height: 50px;
+            background-color: #394a5177;
+        }
+
+        .links {
+            color: black;
+            margin-left: 8vw;
+            margin-top: 1.5vh;
+        }
+
+        .links a {
+            font-size: small;
+            text-decoration: none;
+            padding-left: 5vw;
+            color: black;
+        }
+
+        .links a:hover {
+            color: white;
+        }
+
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            justify-content: center;
+        }
+
+        #s1 {
+            float: left;
+            margin-left: -80%;
+        }
+
+        #s2 {
+            padding-left: 5vw;
+            padding-right: 5vw;
+        }
+
+        #s3 {
+            float: right;
+            margin-right: -80%;
+        }
+
+        #sign-in-icon {
+            display: none;
+        }
+
+        #movie {
+            display: flex;
+            width: 800px;
+            height: 400px;
+            margin: auto;
+            border-radius: 50px;
+            margin-top: 5vh;
+            align-items: center;
+            color: white;
+            background-image: linear-gradient(rgb(107, 107, 107), rgb(153, 152, 150));
+            flex-wrap: wrap;
+        }
+
+        #movie_pos {
+            width: 300px;
+            height: 300px;
+            margin-left: 2vw;
+            object-fit: contain;
+        }
+
+        #book_now {
+            display: block;
+            padding: 15px;
+            background-color: gold;
+            color: white;
+            border-radius: 10px;
+            font-size: medium;
+            position: relative;
+            left: 650px;
+            cursor: pointer;
+        }
+
+        #Search-buttonm {
+            display: none;
+        }
+
+        @media only screen and (max-width: 1280px) {
+            button#Search-button {
+                width: 35px;
+                right: 40px;
+            }
+
+            #search-text {
+                display: none;
+            }
+        }
+
+        @media only screen and (max-width: 1120px) {
+            .posters {
+                overflow-x: auto;
+                overflow-y: hidden;
+                white-space: nowrap;
+                width: 100vw;
+            }
+        }
+
+        @media only screen and (max-width: 1024px) and (min-width: 500px) {
+            #s1 {
+                display: none;
+            }
+
+            #s3 {
+                display: none;
+            }
+        }
+
+        @media only screen and (max-width: 896px) {
+            #s2 {
+                width: 100vw;
+                object-fit: contain;
+            }
+
+            #Search-button {
+                display: none;
+            }
+
+            .nav-bar {
+                justify-content: space-evenly;
+            }
+
+            .sign-in {
+                margin: 0%;
+            }
+
+            #Search {
+                margin: 0%;
+                width: 200px;
+            }
+
+            .nav-bar img {
+                margin: 0%;
+            }
+
+            #city {
+                margin: 0%;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .footer {
+                height: auto;
+                flex-direction: column;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            #city {
+                display: none;
+            }
+
+            #Search {
+                display: none;
+            }
+
+            #sign-in-txt {
+                display: none;
+            }
+
+            #search-text {
+                display: none;
+            }
+
+            #Search-button {
+                display: inline-flex;
+                width: 35px !important;
+                position: absolute !important;
+                right: 15vw !important;
+                background-color: black;
+                color: white;
+            }
+
+            #sign-in-icon {
+                display: inline-block;
+            }
+
+            .sign-in {
+                width: 35px;
+                position: absolute;
+                right: 2vw;
+            }
+
+            .footer {
+                height: auto;
+            }
+
+            .nav-bar {
+                justify-content: center;
+            }
+
+            .nav-bar-2 {
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .links {
+                margin: 0%;
+            }
+
+            #s1 {
+                width: 100vw;
+                object-fit: contain;
+            }
+
+            #s2 {
+                width: 100vw;
+                object-fit: contain;
+            }
+
+            #s3 {
+                width: 100vw;
+                object-fit: contain;
+            }
+
+            .Cards {
+                width: 180px;
+                height: 280px;
+            }
+
+            .footer ul {
+                font-size: small;
+            }
+
+            .footer {
+                flex-direction: column;
+            }
+        }
+
+        @media only screen and (max-width: 800px) {
+            #movie_pos {
+                width: 150px;
+                height: 150px;
+            }
+
+            #movie {
+                width: 100vw;
+                height: auto;
+                flex-direction: column;
+                justify-content: center;
+                font-size: smaller;
+            }
+
+            #book_now {
+                position: static;
+                width: 150px;
+            }
+
+        }
+
+        @media only screen and (max-width: 500px) {
+            #city {
+                display: none;
+            }
+
+            #Search {
+                display: none;
+            }
+
+            #sign-in-txt {
+                display: none;
+            }
+
+            #search-text {
+                display: none;
+            }
+
+            #Search-buttonm {
+                display: inline-flex;
+                width: 35px !important;
+                position: absolute !important;
+                right: 15vw !important;
+                background-color: black;
+                color: white;
+                border: none !important;
+            }
+            #Search-button{
+                display: none;
+            }
+            #sign-in-icon {
+                display: inline-block;
+            }
+
+            .sign-in {
+                width: 35px;
+                position: absolute;
+                right: 2vw;
+            }
+
+            .footer {
+                height: auto;
+            }
+
+            .nav-bar {
+                justify-content: center;
+            }
+
+            .nav-bar-2 {
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .links {
+                margin: 0%;
+            }
+
+            #s1 {
+                width: 100vw;
+                object-fit: contain;
+            }
+
+            #s2 {
+                width: 100vw;
+                object-fit: contain;
+            }
+
+            #s3 {
+                width: 100vw;
+                object-fit: contain;
+            }
+
+            .Cards {
+                width: 180px;
+                height: 280px;
+            }
+
+            .footer ul {
+                font-size: small;
+            }
+
+            .footer {
+                flex-direction: column;
+            }
+        }
+
+        #description {
+            margin-left: 2vw;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function searchbar() {
+            document.getElementById('Search').style.display = "flex";
+            document.getElementById('Search').style.width = "80vw";
+            document.getElementById('logo').style.display = "none";
+            document.getElementById('Search-buttonm').style.display = "none";
+            document.getElementById('nav-bar1').style.justifyContent = "space-between";
+        }
+    </script>
+    <div class='nav-bar' id = 'nav-bar1'>
+        <a href = '/homepage.html' style = 'color: white; text-decoration: none; cursor: pointer'><img src = 'Bookit.png' alt="Bookit" id='logo'></a>
+        <input type='text' placeholder="Search for movies, sports, events, shows and More" id='Search'>
+        <button id='Search-button'><i class="material-icons-outlined" id='mag'>search</i><span
+                id='search-text'>Search</span></button>
+        <button id='Search-buttonm' onclick="searchbar()"><i class="material-icons-outlined"
+                id='mag'>search</i></button>
+        <select id='city'>
+            <!--<span class="material-icons-outlined">
+              expand_more
+            </span>--->
+            <option>Chennai</option>
+            <option>Mumbai</option>
+            <option>Kolkata</option>
+            <option>Coimbatore</option>
+            <option>Pune</option>
+            <option>Delhi</option>
+            <option>Banglore</option>
+            <option>Hyderabad</option>
+        </select>
+        <button class='sign-in'><span class="material-icons-outlined" id='sign-in-icon'>
+                account_circle
+            </span><span id='sign-in-txt'>Sign In</span></button>
+    </div>
+    <div class='nav-bar-2'>
+        <div class='links'>
+            <a href=''>Movies</a>
+            <a href=''>Sports</a>
+            <a href=''>Events</a>
+            <a href=''>Shows</a>
+        </div>
+    </div>
+    <script>
+        function layout() {
+            location.replace("\layout.html");
+        }
+    </script>
+    <div id='movie'>
+        <img src='Karnan.jpg' alt="godzilla vs kong" id='movie_pos'>
+        <div id='description'>
+            <h4 class='describe'>Karnan</h4>
+            <h3 class='describe'><span>Theater: </span>Sathyam Cinemas Royapettah Chennai</h3>
+            <h3 class='describe'>Language: Tamil</h3>
+            <h3 class='describe'>Duration: 2h 39 min</h3>
+            <h3 class='describe'>Date: 10/04/21</h3>
+            <h3 class='describe'>Time: 7:30 PM</h3>
+        </div>
+        <button id='book_now' onclick='layout()'>Book Now</button>
+    </div>
+</body>
+
+</html>

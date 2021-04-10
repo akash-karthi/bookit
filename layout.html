@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=0.1,maximum-scale=0.1" />
+    <title>Document</title>
+    <style>
+        span h1 {
+            margin: 0px;
+            padding: 0px;
+            display: inline-block
+        }
+
+        #screen-txt {
+            display: block;
+            width: max-content;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        #K {
+            display: inline-block;
+            width: 739.817px;
+            margin-top: 34px;
+        }
+
+
+        .seat {
+            display: inline-block;
+            flex-shrink: 0%;
+            flex-grow: 0%;
+            width: 50px;
+            height: 50px;
+            margin-left: 10px;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+
+        .booked {
+            background-color: red;
+        }
+
+        .available {
+            background-color: rgb(81, 219, 47);
+        }
+
+        .selected {
+            background-color: #545551;
+        }
+
+        .ref {
+            display: block;
+            width: max-content;
+            margin: auto;
+            text-align: center;
+            margin-top: 2vh;
+            margin-bottom: 5vh;
+        }
+
+        #K-txt {
+            margin: auto;
+            width: max-content;
+        }
+
+        .describe {
+            padding: 0;
+            margin-left: 2vw;
+            margin-top: 0%;
+            margin-bottom: 0%;
+            line-height: 50px;
+        }
+
+        #screen {
+            width: 50vw;
+            height: 1vh;
+            margin: auto;
+            margin-top: 2vh;
+            background-color: #394a51;
+        }
+
+        #L {
+            display: block;
+            float: right;
+            /* position: relative; */
+            /* bottom: 400px; */
+            /* left: 700px; */
+            width: 1000px;
+            margin-top: 34px;
+            margin-left: 50px;
+        }
+
+        #M {
+            display: block;
+            width: 739.817px;
+            margin-top: 34px;
+            margin-left: 50px;
+            float: right;
+            /* position: relative; */
+            /* bottom: 925px; */
+            /* left: 1750px; */
+        }
+
+        #L-txt {
+            margin: auto;
+            width: max-content;
+        }
+
+        .layout {
+            display: block;
+            width: max-content;
+            overflow: auto;
+            margin: auto;
+        }
+
+        .ref-txt {
+            position: relative;
+            bottom: 22px;
+        }
+
+      
+    </style>
+</head>
+
+<body>
+    <script>
+        function selected(sid) {
+            if (document.getElementById(sid).classList.contains('was-clicked')) {
+                document.getElementById(sid).style.backgroundColor = "rgb(81, 219, 47)";
+                document.getElementById(sid).classList.remove('was-clicked')
+            }
+            else {
+                document.getElementById(sid).style.backgroundColor = "rgb(84, 85, 81)";
+                document.getElementById(sid).classList.add('was-clicked')
+            }
+        }
+    </script>
+    <div class="layout">
+        <div class="ref">
+            <div class='seat booked'></div> <span class='ref-txt'>
+                <h1>Booked</h1>
+            </span>
+            <div class='seat available'></div> <span class='ref-txt'>
+                <h1>Available</h1>
+            </span>
+            <div class='seat selected'></div> <span class='ref-txt'>
+                <h1>Selected</h1>
+            </span>
+        </div>
+        <span id='screen-txt'>
+            <h1>Screen</h1>
+        </span>
+        <div id="screen"></div>
+        <div id="K">
+            <h1 id='K-txt'>K</h1>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s1"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s2"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s3"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s4"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s5"></button>
+            <button class="seat booked"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s6"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s7"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s8"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s9"></button>
+            <button class="seat booked"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s10"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s11"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s12"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s13"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s14"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s15"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s16"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s17"></button>
+            <button class="seat booked"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s20"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s21"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s22"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s23"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s24"></button>
+            <button class="seat booked"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s25"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s26"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s27"></button>
+            <button class="seat booked"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s28"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s29"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s30"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s31"></button>
+            <button class="seat booked"></button>
+        </div>
+        <div id='M'>
+            <h1 id='K-txt'>M</h1>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s32"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s33"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s34"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s35"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s36"></button>
+            <button class="seat booked"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s37"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s38"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s39"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s40"></button>
+            <button class="seat booked"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s41"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s42"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s43"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s44"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s45"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s46"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s47"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s48"></button>
+            <button class="seat booked"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s49"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s50"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s51"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s52"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s53"></button>
+            <button class="seat booked"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s54"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s55"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s56"></button>
+            <button class="seat booked"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s57"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s58"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s59"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s60"></button>
+            <button class="seat booked"></button>
+        </div>
+        <div id='L'>
+            <h1 id='L-txt'>L</h1>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s61"></button>
+            <button class="seat booked"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s62"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s63"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s64"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s65"></button>
+            <button class="seat booked"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s66"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s67"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s68"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s69"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="70"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s71"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s72"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s73"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s73"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s74"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s75"></button>
+            <button class="seat booked"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s76"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s77"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s78"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s79"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s80"></button>
+            <button class="seat booked"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s90"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s91"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s92"></button>
+            <button class="seat booked"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s93"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s94"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s95"></button>
+            <button class="seat booked"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s96"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s97"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s98"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s99"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s100"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s101"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s102"></button>
+            <button class="seat booked"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s103"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s104"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s105"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s106"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s107"></button>
+            <button class="seat booked"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s108"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s109"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s110"></button>
+            <button class="seat booked"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s111"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s112"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s113"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s114"></button>
+            <button class="seat booked"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s115"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s116"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s117"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s118"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s119"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s120"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s121"></button>
+            <button class="seat booked"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s122"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s123"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s124"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s125"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s126"></button>
+            <button class="seat booked"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s127"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s128"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s129"></button>
+            <button class="seat booked"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s130"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s131"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s132"></button>
+            <button class="seat booked"></button>
+            <button class="seat available" onclick='selected(this.getAttribute("id"))' id="s133"></button>
+            <button class="seat booked"></button>
+        </div>
+</body>
+
+</html>

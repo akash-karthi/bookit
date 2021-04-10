@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <title>Movies</title>
+    <style>
+        body {
+            margin: 0%;
+            background-color: #f2f2f2;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .nav-bar {
+            display: flex;
+            margin: 0px;
+            height: 60px;
+            background-color: #394A51;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-bar img {
+            /* margin-top: 2vh; */
+            /* margin-left: 12vw; */
+            width: 92.15px;
+            height: 27.933px;
+        }
+
+        #Search {
+            margin-left: 3vw;
+            width: 496px;
+            height: 30px;
+            /* margin-top: 2vh; */
+            background-color: white;
+            border-radius: 2vw;
+            font-size: small;
+        }
+
+        #Search-button {
+            display: inline-flex;
+            position: relative;
+            /* top: 2.3vh; */
+            right: 95px;
+            width: 92.15px;
+            height: 24.433px;
+            font-size: medium;
+            text-align: center;
+            border-radius: 2vw;
+            background-color: #394a51;
+            color: white;
+            justify-items: center;
+        }
+
+        #mag {
+            display: inline;
+        }
+
+        #Search-button:focus {
+            border-color: transparent;
+            outline: none;
+        }
+
+        #Search-button:hover {
+            background-color: #222324;
+        }
+
+        #city {
+            width: 92.15px;
+            height: 24px;
+            margin-left: 18vw;
+            /* margin-top: 2.5vh; */
+            border-radius: 20px;
+            appearance: none;
+            background-image: url('expand-more.png');
+            background-repeat: no-repeat;
+            background-position-x: 60px;
+            background-position-y: 6px;
+            background-color: white;
+        }
+
+        .sign-in {
+            /* margin-top: 2.5vh; */
+            display: inline-flex;
+            height: 24px;
+            margin-left: 4vw;
+            width: 92.15px;
+            border-radius: 2vw;
+            background-color: rgb(224, 62, 62);
+            color: white;
+            font-size: medium;
+            border: none;
+            justify-content: center;
+        }
+
+        .sign-in:focus {
+            border-color: transparent;
+            outline: none;
+        }
+
+        .sign-in:hover {
+            background-color: rgb(214, 13, 13);
+            cursor: pointer;
+        }
+
+        #Search:focus {
+            border-color: transparent;
+            outline: none;
+        }
+
+        .nav-bar-2 {
+            display: flex;
+            height: 50px;
+            background-color: #394a5177;
+        }
+
+        .links {
+            color: black;
+            margin-left: 8vw;
+            margin-top: 1.5vh;
+        }
+
+        .links a {
+            font-size: small;
+            text-decoration: none;
+            padding-left: 5vw;
+            color: black;
+        }
+
+        .links a:hover {
+            color: white;
+        }
+
+        #Search-buttonm {
+            display: none;
+        }
+
+        #sign-in-icon {
+            display: none;
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 100vw;
+            position: relative;
+            margin: auto;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            height: 10px;
+            width: 10px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        .filter {
+            display: flex;
+            flex-direction: column;
+            box-sizing: content-box;
+            border: 2px solid black;
+            width: 250px;
+            height: min-content;
+            margin-left: 10px;
+            /* margin-inline-start: 150px; */
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .filter button {
+            width: fit-content;
+            height: 30px;
+            border-radius: 5px;
+            border: 2px solid black;
+        }
+
+        .filter button:hover {
+            cursor: pointer;
+            background-color: red;
+            color: white;
+            border: none;
+        }
+
+        .opt1 h2 {
+            padding-bottom: 10px;
+        }
+
+        .opt1 {
+            padding: 5px;
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+
+        #btn1 {
+            margin: 5px;
+        }
+
+        .opt2 h2 {
+            padding-bottom: 5px;
+        }
+
+        .opt2 {
+            padding: 5px;
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+
+        #btn2 {
+            margin: 10px;
+        }
+
+        /*====================================================*/
+        .row1 {
+            box-sizing: border-box;
+            overflow: auto;
+            white-space: nowrap;
+            margin-top: 20px;
+        }
+
+        .row2 {
+            overflow: auto;
+            white-space: nowrap;
+            margin-top: 20px;
+        }
+
+        .row3 {
+            overflow: auto;
+            white-space: nowrap;
+            margin-top: 20px;
+        }
+
+        .row4 {
+            overflow: auto;
+            white-space: nowrap;
+            margin-top: 20px;
+        }
+
+        .pos {
+            width: 225px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-left: 30px;
+        }
+
+        .mov-list {
+            display: block;
+            margin: auto;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            width: max-content;
+            margin: auto;
+        }
+
+        @media only screen and (max-width: 1500px) {
+            .row1 {
+                width: calc(100vw - 270px);
+            }
+
+            .row2 {
+                width: calc(100vw - 270px);
+            }
+
+            .row3 {
+                width: calc(100vw - 270px);
+            }
+
+            .row4 {
+                width: calc(100vw - 270px);
+            }
+        }
+
+        @media only screen and (max-width: 1280px) {
+            button#Search-button {
+                width: 35px;
+                right: 40px;
+            }
+
+            #search-text {
+                display: none;
+            }
+
+        }
+
+        @media only screen and (max-width: 1024px) and (min-width: 500px) {
+            #footer {
+                flex-direction: column;
+            }
+        }
+
+        @media only screen and (max-width: 896px) {
+
+            #Search-button {
+                display: none;
+            }
+
+            .nav-bar {
+                justify-content: space-evenly;
+            }
+
+            .sign-in {
+                margin: 0%;
+            }
+
+            #Search {
+                margin: 0%;
+                width: 200px;
+            }
+
+            .nav-bar img {
+                margin: 0%;
+            }
+
+            #city {
+                margin: 0%;
+            }
+
+            .filter {
+                width: 95vw;
+                height: min-content;
+                box-sizing: border-box;
+            }
+
+            .filter h1 {
+                margin: 2px;
+                padding: 0%;
+            }
+
+            .filter h2 {
+                margin: 2px;
+                padding: 0%;
+            }
+
+            .dot {
+                display: none;
+            }
+
+            .opt1 {
+                width: 80vw;
+                white-space: nowrap;
+                overflow: auto;
+                margin: 2px;
+            }
+
+            .opt2 {
+                width: 80vw;
+                white-space: nowrap;
+                overflow: auto;
+                margin: 2px
+            }
+
+            #btn1 {
+                margin: 2px;
+                padding: 2px;
+            }
+
+            #btn2 {
+                margin: 2px;
+                padding: 2px;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            .mov-list {
+                width: 100vw;
+            }
+
+            .row1 {
+                width: 100vw;
+            }
+
+            .row2 {
+                width: 100vw;
+            }
+
+            .row3 {
+                width: 100vw;
+            }
+
+            .row4 {
+                width: 100vw;
+            }
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            .footer {
+                height: auto;
+                flex-direction: column;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            #city {
+                display: none;
+            }
+
+            #Search {
+                display: none;
+            }
+
+            #sign-in-txt {
+                display: none;
+            }
+
+            #search-text {
+                display: none;
+            }
+
+            #Search-buttonm {
+                display: inline-flex;
+                width: 35px !important;
+                position: absolute !important;
+                right: 15vw !important;
+                background-color: black;
+                color: white;
+                border: none !important;
+            }
+
+            #sign-in-icon {
+                display: inline-block;
+            }
+
+            .sign-in {
+                width: 35px;
+                position: absolute;
+                right: 2vw;
+            }
+
+            .footer {
+                height: auto;
+            }
+
+            .nav-bar {
+                justify-content: center;
+            }
+
+            .nav-bar-2 {
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .links {
+                margin: 0%;
+            }
+
+            .footer ul {
+                font-size: small;
+            }
+
+            .footer {
+                flex-direction: column;
+            }
+        }
+
+        .footer {
+            display: flex;
+            flex-wrap: wrap;
+            height: auto;
+            background-color: #394A51;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .footer ul {
+            font-family: Playfair display, sans-serif;
+            color: white;
+            line-height: 25px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function searchbar() {
+            document.getElementById('Search').style.display = "flex";
+            document.getElementById('Search').style.width = "80vw";
+            document.getElementById('logo').style.display = "none";
+            document.getElementById('Search-buttonm').style.display = "none";
+            document.getElementById('nav-bar1').style.justifyContent = "space-between";
+        }
+        function redirect(link) {
+            location.replace(link)
+        }
+    </script>
+    <div class='nav-bar' id='nav-bar1'>
+        <a href = '/homepage.html' style = 'color: white; text-decoration: none; cursor: pointer'><img src = 'Bookit.png' alt="Bookit" id='logo'></a>
+        <input type='text' placeholder="Search for movies, sports, events, shows and More" id='Search'>
+        <button id='Search-button'><i class="material-icons-outlined" id='mag'>search</i><span
+                id='search-text'>Search</span></button>
+        <button id='Search-buttonm' onclick="searchbar()"><i class="material-icons-outlined"
+                id='mag'>search</i></button>
+        <select id='city'>
+            <!--<span class="material-icons-outlined">
+              expand_more
+            </span>--->
+            <option>Chennai</option>
+            <option>Mumbai</option>
+            <option>Kolkata</option>
+            <option>Coimbatore</option>
+            <option>Pune</option>
+            <option>Delhi</option>
+            <option>Banglore</option>
+            <option>Hyderabad</option>
+        </select>
+        <button class='sign-in' id='sign-in-btn' onclick='redirect("/sign-in.html")'><span
+                class="material-icons-outlined" id='sign-in-icon'>
+                account_circle
+            </span><span id='sign-in-txt'>Sign In</span></button>
+    </div>
+    <div class='nav-bar-2'>
+        <div class='links'>
+            <a href=''>Movies</a>
+            <a href=''>Sports</a>
+            <a href=''>Events</a>
+            <a href=''>Shows</a>
+        </div>
+    </div>
+    <div class="carousel">
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <img src="movie400.jpeg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="event400.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="event400.jpg" style="width:100%">
+            </div>
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    </script>
+    <div class="container">
+        <div class="filter">
+            <h1>Filters</h1>
+            <div class="opt1">
+                <h2>Languages</h2>
+                <button id="btn1">Tamil</button>
+                <button id="btn1">Hindi</button>
+                <button id="btn1">English</button>
+                <button id="btn1">Telugu</button>
+                <button id="btn1">Malayalam</button>
+            </div>
+            <div class="opt2">
+                <h2>Genre</h2>
+                <button id="btn2">Romance</button>
+                <button id="btn2">Animation</button>
+                <button id="btn2">Horror</button>
+                <button id="btn2">Comedy</button>
+                <button id="btn2">Thriller</button>
+                <button id="btn2">Action</button>
+                <button id="btn2">Drama</button>
+            </div>
+        </div>
+
+        <div class="mov-list">
+            <h1>MOVIES</h1>
+            <div class='row1'>
+                <a href = 'theatre.html' style = 'color: white; text-decoration: none; cursor: pointer;'><a href = 'theatre.html' style = 'color: white; text-decoration: none; cursor: pointer;'><img src="godzilla vs kong.jpg" alt="" class='pos'></a></a>
+                <a href = 'theatre.html' style = 'color: white; text-decoration: none; cursor: pointer;'><img src="godzilla vs kong.jpg" alt="" class='pos'></a>
+                <a href = 'theatre.html' style = 'color: white; text-decoration: none; cursor: pointer;'><img src="godzilla vs kong.jpg" alt="" class='pos'></a>
+                <a href = 'theatre.html' style = 'color: white; text-decoration: none; cursor: pointer;'><img src="godzilla vs kong.jpg" alt="" class='pos'></a>
+            </div>
+            <div class="row2">
+                <a href = 'theatre.html' style = 'color: white; text-decoration: none; cursor: pointer;'><img src="godzilla vs kong.jpg" alt="" class='pos'></a>
+                <a href = 'theatre.html' style = 'color: white; text-decoration: none; cursor: pointer;'><img src="godzilla vs kong.jpg" alt="" class='pos'></a>
+                <a href = 'theatre.html' style = 'color: white; text-decoration: none; cursor: pointer;'><img src="godzilla vs kong.jpg" alt="" class='pos'></a>
+                <a href = 'theatre.html' style = 'color: white; text-decoration: none; cursor: pointer;'><img src="godzilla vs kong.jpg" alt="" class='pos'></a>
+            </div>
+            <div class="row3">
+                <a href = 'theatre.html' style = 'color: white; text-decoration: none; cursor: pointer;'><img src="godzilla vs kong.jpg" alt="" class='pos'></a>
+                <a href = 'theatre.html' style = 'color: white; text-decoration: none; cursor: pointer;'><img src="godzilla vs kong.jpg" alt="" class='pos'></a>
+                <a href = 'theatre.html' style = 'color: white; text-decoration: none; cursor: pointer;'><img src="godzilla vs kong.jpg" alt="" class='pos'></a>
+                <a href = 'theatre.html' style = 'color: white; text-decoration: none; cursor: pointer;'><img src="godzilla vs kong.jpg" alt="" class='pos'></a>
+            </div>
+            <div class="row4">
+                <a href = 'theatre.html' style = 'color: white; text-decoration: none; cursor: pointer;'><img src="godzilla vs kong.jpg" alt="" class='pos'></a>
+                <a href = 'theatre.html' style = 'color: white; text-decoration: none; cursor: pointer;'><img src="godzilla vs kong.jpg" alt="" class='pos'></a>
+                <a href = 'theatre.html' style = 'color: white; text-decoration: none; cursor: pointer;'><img src="godzilla vs kong.jpg" alt="" class='pos'></a>
+                <a href = 'theatre.html' style = 'color: white; text-decoration: none; cursor: pointer;'><img src="godzilla vs kong.jpg" alt="" class='pos'></a>
+            </div>
+        </div>
+    </div>
+    <div class='footer'>
+        <div class="contactus">
+            <ul type=none>
+                <li>Contact Us</li>
+                <li>+91 9999988888</li>
+                <li>enquiries@bootkit.com</li>
+            </ul>
+        </div>
+        <div class='enquiries'>
+            <ul type='none'>
+                <li>Payment and Billing</li>
+                <li>Returns</li>
+                <li>FAQ</li>
+                <li>Customer Forum</li>
+            </ul>
+        </div>
+        <div class='about us'>
+            <ul type='none'>
+                <li>About Us</li>
+                <li>Work with Us</li>
+                <li>Privacy Policy</li>
+                <li>Terms and Conditions</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

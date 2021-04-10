@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <title>Theatre-list</title>
+    <style>
+        body {
+            margin: 0%;
+            background-color: #f2f2f2;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .nav-bar {
+            display: flex;
+            margin: 0px;
+            height: 60px;
+            background-color: #394A51;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-bar img {
+            /* margin-top: 2vh; */
+            /* margin-left: 12vw; */
+            width: 92.15px;
+            height: 27.933px;
+        }
+
+        #Search {
+            margin-left: 3vw;
+            width: 496px;
+            height: 30px;
+            /* margin-top: 2vh; */
+            background-color: white;
+            border-radius: 2vw;
+            font-size: small;
+        }
+
+        #Search-button {
+            display: inline-flex;
+            position: relative;
+            /* top: 2.3vh; */
+            right: 95px;
+            width: 92.15px;
+            height: 24.433px;
+            font-size: medium;
+            text-align: center;
+            border-radius: 2vw;
+            background-color: #394a51;
+            color: white;
+            justify-items: center;
+        }
+
+        #mag {
+            display: inline;
+        }
+
+        #Search-button:focus {
+            border-color: transparent;
+            outline: none;
+        }
+
+        #Search-button:hover {
+            background-color: #222324;
+        }
+
+        #city {
+            width: 92.15px;
+            height: 24px;
+            margin-left: 18vw;
+            /* margin-top: 2.5vh; */
+            border-radius: 20px;
+            appearance: none;
+            background-image: url('expand-more.png');
+            background-repeat: no-repeat;
+            background-position-x: 60px;
+            background-position-y: 6px;
+            background-color: white;
+        }
+
+        .sign-in {
+            /* margin-top: 2.5vh; */
+            display: inline-flex;
+            height: 24px;
+            margin-left: 4vw;
+            width: 92.15px;
+            border-radius: 2vw;
+            background-color: rgb(224, 62, 62);
+            color: white;
+            font-size: medium;
+            border: none;
+            justify-content: center;
+        }
+
+        .sign-in:focus {
+            border-color: transparent;
+            outline: none;
+        }
+
+        .sign-in:hover {
+            background-color: rgb(214, 13, 13);
+            cursor: pointer;
+        }
+
+        #Search:focus {
+            border-color: transparent;
+            outline: none;
+        }
+
+        .nav-bar-2 {
+            display: flex;
+            height: 50px;
+            background-color: #394a5177;
+        }
+
+        .links {
+            color: black;
+            margin-left: 8vw;
+            margin-top: 1.5vh;
+        }
+
+        .links a {
+            font-size: small;
+            text-decoration: none;
+            padding-left: 5vw;
+            color: black;
+        }
+
+        .links a:hover {
+            color: white;
+        }
+
+        #search-text {
+            margin-top: 0.25vh;
+        }
+
+        .footer {
+            display: flex;
+            flex-wrap: wrap;
+            height: auto;
+            background-color: #394A51;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .footer ul {
+            font-family: Playfair display, sans-serif;
+            color: white;
+            line-height: 25px;
+            font-size: 16px;
+        }
+
+        #sign-in-icon {
+            display: none;
+        }
+
+        #Search-buttonm {
+            display: none;
+        }
+
+        @media only screen and (max-width: 1280px) {
+            button#Search-button {
+                width: 35px;
+                right: 40px;
+            }
+
+            #search-text {
+                display: none;
+            }
+        }
+
+
+        @media only screen and (max-width: 1024px) and (min-width: 500px) {
+            #footer {
+                flex-direction: column;
+            }
+        }
+
+        @media only screen and (max-width: 896px) {
+
+            #Search-button {
+                display: none;
+            }
+
+            .nav-bar {
+                justify-content: space-evenly;
+            }
+
+            .sign-in {
+                margin: 0%;
+            }
+
+            #Search {
+                margin: 0%;
+                width: 200px;
+            }
+
+            .nav-bar img {
+                margin: 0%;
+            }
+
+            #city {
+                margin: 0%;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .footer {
+                height: auto;
+                flex-direction: column;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            #city {
+                display: none;
+            }
+
+            #Search {
+                display: none;
+            }
+
+            #sign-in-txt {
+                display: none;
+            }
+
+            #search-text {
+                display: none;
+            }
+
+            #Search-buttonm {
+                display: inline-flex;
+                width: 35px !important;
+                position: absolute !important;
+                right: 15vw !important;
+                background-color: black;
+                color: white;
+                border: none !important;
+            }
+
+            #sign-in-icon {
+                display: inline-block;
+            }
+
+            .sign-in {
+                width: 35px;
+                position: absolute;
+                right: 2vw;
+            }
+
+            .footer {
+                height: auto;
+            }
+
+            .nav-bar {
+                justify-content: center;
+            }
+
+            .nav-bar-2 {
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .links {
+                margin: 0%;
+            }
+
+            .footer ul {
+                font-size: small;
+            }
+
+            .footer {
+                flex-direction: column;
+            }
+        }
+
+        /* --------------------------------------------- */
+
+        .mov-info {
+            max-width: 100%;
+            max-height: fit-content;
+            background-image: url('Karnan.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-inline-start: 170px;
+            color: white;
+        }
+
+        .info-align {
+            display: flex;
+            background: none;
+            padding: 30px;
+
+        }
+
+        .mov-img img {
+            width: 200px;
+            height: 300px;
+
+
+        }
+
+        .mov-synopsis {
+            padding: 50px 0 0 40px;
+            background: transparent;
+        }
+
+        p {
+            background: transparent;
+        }
+
+        /*========================================*/
+        .theatre-col {
+            padding-inline-start: 180px;
+            padding-inline-end: 200px;
+        }
+
+        hr {
+            opacity: 0.5;
+        }
+
+        .date {
+            padding-left: 20px;
+            padding-top: 40px;
+            padding-bottom: 5px;
+        }
+
+        .date a {
+            color: black;
+            text-decoration: none;
+            background-color: transparent;
+            padding-right: 35px;
+            width: 10px;
+        }
+
+        .date a:hover {
+            cursor: pointer;
+            color: red;
+        }
+
+        /*=========================================================*/
+        .fac-list {
+            padding-left: 20px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+
+        }
+
+        .fac-list input[type=search] {
+            width: 250px;
+            height: 45px;
+            text-indent: 40px;
+            font-size: 16px;
+            padding: 0px;
+        }
+
+        .fac-list img {
+            width: 30px;
+            height: 30px;
+            position: relative;
+            left: -250px;
+            top: 10px;
+        }
+
+        .fac-list select {
+            padding: 10px 40px 10px 0;
+            align-items: center;
+            font-size: 16px;
+            border: none;
+        }
+
+        #opt2,
+        #opt3 {
+            border-right: 1px solid;
+        }
+
+        /*===========================================*/
+
+        .t-names {
+            padding-left: 20px;
+
+            max-height: max-content;
+        }
+
+        .timings {
+            padding-inline-start: 350px;
+            width: 900px;
+            margin-top: -40px;
+
+        }
+
+        .timings button {
+            padding: 10px;
+            border-radius: 5px;
+
+        }
+
+        #red {
+            color: red;
+            border: 1px solid red;
+        }
+
+        #red:hover {
+            color: white;
+            background-color: red;
+            cursor: pointer;
+        }
+
+        #green {
+            color: green;
+            border: 1px solid green;
+        }
+
+        #green:hover {
+            color: white;
+            background-color: green;
+            cursor: pointer;
+        }
+
+        /*================================================*/
+        .footer {
+            position: relative;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 200px;
+            background-color: #394a51;
+            color: white;
+            text-align: center;
+        }
+
+        .footer p {
+            background-color: transparent;
+            display: inline-flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function searchbar() {
+            document.getElementById('Search').style.display = "flex";
+            document.getElementById('Search').style.width = "80vw";
+            document.getElementById('logo').style.display = "none";
+            document.getElementById('Search-buttonm').style.display = "none";
+            document.getElementById('nav-bar1').style.justifyContent = "space-between";
+        }
+        function gotobooking() {
+            location.replace('/booking.html')
+        }
+    </script>
+    <div class='nav-bar' id='nav-bar1'>
+        <a href = '/homepage.html' style = 'color: white; text-decoration: none; cursor: pointer'><img src = 'Bookit.png' alt="Bookit" id='logo'></a>
+        <input type='text' placeholder="Search for movies, sports, events, shows and More" id='Search'>
+        <button id='Search-button'><i class="material-icons-outlined" id='mag'>search</i><span
+                id='search-text'>Search</span></button>
+        <button id='Search-buttonm' onclick="searchbar()"><i class="material-icons-outlined"
+                id='mag'>search</i></button>
+        <select id='city'>
+            <!--<span class="material-icons-outlined">
+              expand_more
+            </span>--->
+            <option>Chennai</option>
+            <option>Mumbai</option>
+            <option>Kolkata</option>
+            <option>Coimbatore</option>
+            <option>Pune</option>
+            <option>Delhi</option>
+            <option>Banglore</option>
+            <option>Hyderabad</option>
+        </select>
+        <button class='sign-in' id='sign-in-btn' onclick='redirect("/sign-in.html")'><span
+                class="material-icons-outlined" id='sign-in-icon'>
+                account_circle
+            </span><span id='sign-in-txt'>Sign In</span></button>
+    </div>
+    <div class='nav-bar-2'>
+        <div class='links'>
+            <a href='\moviestest.html'>Movies</a>
+            <a href=''>Sports</a>
+            <a href=''>Events</a>
+            <a href=''>Shows</a>
+        </div>
+    </div>
+    <div class="mov-info">
+        <div class="info-align">
+            <div class="mov-img">
+                <a href="#"><img
+                        src="Karnan.jpg"></a>
+            </div>
+            <div class="mov-synopsis">
+                <p>Karnan (U/A) - Tamil<br>
+                    Tamil | U/A<br>
+                    Drama | 4/9/2021 | 2 hrs 39 mins<br>
+                    Actors: Dhanush | Rajisha Vijayan<br>
+
+                    Director: Mari Selvaraj<br>
+
+                    Music Director: Santhosh Narayanan<br>
+
+                    SYNOPSIS<br>
+                    Drama film directed by Mari Selvaraj starring Dhanush in lead role</p>
+            </div>
+        </div>
+    </div>
+    <div class="theatre-col">
+        <div class="date">
+            <a href="#">Today-10</a>
+            <a href="#">MON-11</a>
+            <a href="#">TUE-12</a>
+            <a href="#">WED-13</a>
+            <a href="#">THUR-14</a>
+            <a href="#">FRI-15</a>
+        </div>
+        <hr>
+        <div class="fac-list">
+            <input id="opt1" type="search" placeholder="Search">
+            <img src="search.png">
+
+            <select id="opt2">
+                <option>Experience</option>
+                <option>3D</option>
+                <option>2D</option>
+                <option>Imax 3D</option>
+                <option>RGB Laser</option>
+                <option>4K</option>
+                <option>Dolby Atmos</option>
+            </select>
+            <select id="opt3">
+                <option>Filter price</option>
+                <option>Rs.100-200</option>
+                <option>Above Rs.200</option>
+            </select>
+        </div>
+        <hr>
+        <div class="t-names">
+            <div class="t-info">
+                <h2>Sathyam Cinemas</h2>
+                <p>Royapettah Chennai</p>
+            </div>
+            <div class="timings">
+                <button id="red" onclick="gotobooking()">10:30 am</button>
+                <button id="red" onclick="gotobooking()">11:30 am</button>
+                <button id="green" onclick="gotobooking()">01:30 pm</button>
+                <button id="red" onclick="gotobooking()">02:00 pm</button>
+                <button id="red" onclick="gotobooking()">03:30 pm</button>
+                <button id="green" onclick="gotobooking()">04:30 m</button>
+                <button id="green" onclick="gotobooking()">06:00 am</button>
+                <button id="green" onclick="gotobooking()">07:30 am</button>
+                <button id="red" onclick="gotobooking()">10:30 pm</button>
+            </div>
+            <br>
+            <hr>
+        </div>
+        <div class="t-names">
+            <div class="t-info">
+                <h2>Vetri Theatres</h2>
+                <p>Chrompet Chennai</p>
+            </div>
+            <div class="timings">
+                <button id="red" onclick="gotobooking()">10:30 am</button>
+                <button id="red" onclick="gotobooking()">11:30 am</button>
+                <button id="green" onclick="gotobooking()">01:30 pm</button>
+                <button id="red" onclick="gotobooking()">02:00 pm</button>
+                <button id="red" onclick="gotobooking()">03:30 pm</button>
+                <button id="green" onclick="gotobooking()">04:30 m</button>
+                <button id="green" onclick="gotobooking()">06:00 am</button>
+                <button id="green" onclick="gotobooking()">07:30 am</button>
+                <button id="red" onclick="gotobooking()">10:30 pm</button>
+            </div>
+            <br>
+            <hr>
+        </div>
+        <div class="t-names">
+            <div class="t-info">
+                <h2>Sangam Cinemas</h2>
+                <p>Mount road Chennai</p>
+            </div>
+            <div class="timings">
+                <button id="red" onclick="gotobooking()">10:30 am</button>
+                <button id="red" onclick="gotobooking()">11:30 am</button>
+                <button id="green" onclick="gotobooking()">01:30 pm</button>
+                <button id="red" onclick="gotobooking()">02:00 pm</button>
+                <button id="red" onclick="gotobooking()">03:30 pm</button>
+                <button id="green" onclick="gotobooking()">04:30 m</button>
+                <button id="green" onclick="gotobooking()">06:00 am</button>
+                <button id="green" onclick="gotobooking()">07:30 am</button>
+                <button id="red" onclick="gotobooking()">10:30 pm</button>
+            </div>
+            <br>
+            <hr>
+        </div>
+        <div class="t-names">
+            <div class="t-info">
+                <h2>Luxe</h2>
+                <p>Velachery Chennai</p>
+            </div>
+            <div class="timings">
+                <button id="red" onclick="gotobooking()">10:30 am</button>
+                <button id="red" onclick="gotobooking()">11:30 am</button>
+                <button id="green" onclick="gotobooking()">01:30 pm</button>
+                <button id="red" onclick="gotobooking()">02:00 pm</button>
+                <button id="red" onclick="gotobooking()">03:30 pm</button>
+                <button id="green" onclick="gotobooking()">04:30 m</button>
+                <button id="green" onclick="gotobooking()">06:00 am</button>
+                <button id="green" onclick="gotobooking()">07:30 am</button>
+                <button id="red" onclick="gotobooking()">10:30 pm</button>
+            </div>
+            <br>
+            <hr>
+        </div>
+        <div class="t-names">
+            <div class="t-info">
+                <h2>Escape Cinemas</h2>
+                <p>Royapettah Chennai</p>
+            </div>
+            <div class="timings">
+                <button id="red" onclick="gotobooking()">10:30 am</button>
+                <button id="red" onclick="gotobooking()">11:30 am</button>
+                <button id="green" onclick="gotobooking()">01:30 pm</button>
+                <button id="red" onclick="gotobooking()">02:00 pm</button>
+                <button id="red" onclick="gotobooking()">03:30 pm</button>
+                <button id="green" onclick="gotobooking()">04:30 m</button>
+                <button id="green" onclick="gotobooking()">06:00 am</button>
+                <button id="green" onclick="gotobooking()">07:30 am</button>
+                <button id="red" onclick="gotobooking()">10:30 pm</button>
+            </div>
+            <br>
+            <hr>
+        </div>
+        <div class="t-names">
+            <div class="t-info">
+                <h2>Palazzo</h2>
+                <p>Vadapalani Chennai</p>
+            </div>
+            <div class="timings">
+                <button id="red" onclick="gotobooking()">10:30 am</button>
+                <button id="red" onclick="gotobooking()">11:30 am</button>
+                <button id="green" onclick="gotobooking()">01:30 pm</button>
+                <button id="red" onclick="gotobooking()">02:00 pm</button>
+                <button id="red" onclick="gotobooking()">03:30 pm</button>
+                <button id="green" onclick="gotobooking()">04:30 m</button>
+                <button id="green" onclick="gotobooking()">06:00 am</button>
+                <button id="green" onclick="gotobooking()">07:30 am</button>
+                <button id="red" onclick="gotobooking()">10:30 pm</button>
+            </div>
+            <br>
+            <hr>
+        </div>
+        <div class="t-names">
+            <div class="t-info">
+                <h2> PVR Cinemas</h2>
+                <p>Pallavaram Chennai</p>
+            </div>
+            <div class="timings">
+                <button id="red">10:30 am</button>
+                <button id="red" onclick="gotobooking()">10:30 am</button>
+                <button id="red" onclick="gotobooking()">11:30 am</button>
+                <button id="green" onclick="gotobooking()">01:30 pm</button>
+                <button id="red" onclick="gotobooking()">02:00 pm</button>
+                <button id="red" onclick="gotobooking()">03:30 pm</button>
+                <button id="green" onclick="gotobooking()">04:30 m</button>
+                <button id="green" onclick="gotobooking()">06:00 am</button>
+                <button id="green" onclick="gotobooking()">07:30 am</button>
+                <button id="red" onclick="gotobooking()">10:30 pm</button>
+            </div>
+            <br>
+            <hr>
+        </div>
+        <div class="t-names">
+            <div class="t-info">
+                <h2>Kamala Theatre</h2>
+                <p>Vadapalani Chennai</p>
+            </div>
+            <div class="timings">
+                <button id="red" onclick="gotobooking()">10:30 am</button>
+                <button id="red" onclick="gotobooking()">11:30 am</button>
+                <button id="green" onclick="gotobooking()">01:30 pm</button>
+                <button id="red" onclick="gotobooking()">02:00 pm</button>
+                <button id="red" onclick="gotobooking()">03:30 pm</button>
+                <button id="green" onclick="gotobooking()">04:30 m</button>
+                <button id="green" onclick="gotobooking()">06:00 am</button>
+                <button id="green" onclick="gotobooking()">07:30 am</button>
+                <button id="red" onclick="gotobooking()">10:30 pm</button>
+            </div>
+            <br>
+            <hr>
+        </div>
+    </div>
+</body>
+
+</html>

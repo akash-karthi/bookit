@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookIt</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0%;
+      background-color: #f2f2f2;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .nav-bar {
+      display: flex;
+      margin: 0px;
+      height: 60px;
+      background-color: #394A51;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-bar img {
+      /* margin-top: 2vh; */
+      /* margin-left: 12vw; */
+      width: 92.15px;
+      height: 27.933px;
+    }
+
+    #Search {
+      margin-left: 3vw;
+      width: 496px;
+      height: 30px;
+      /* margin-top: 2vh; */
+      background-color: white;
+      border-radius: 2vw;
+      font-size: small;
+    }
+
+    #Search-button {
+      display: inline-flex;
+      position: relative;
+      /* top: 2.3vh; */
+      right: 95px;
+      width: 92.15px;
+      height: 24.433px;
+      font-size: medium;
+      text-align: center;
+      border-radius: 2vw;
+      background-color: #394a51;
+      color: white;
+      justify-items: center;
+    }
+
+    #mag {
+      display: inline;
+    }
+
+    #Search-button:focus {
+      border-color: transparent;
+      outline: none;
+    }
+
+    #Search-button:hover {
+      background-color: #222324;
+    }
+
+    #city {
+      width: 92.15px;
+      height: 24px;
+      margin-left: 18vw;
+      /* margin-top: 2.5vh; */
+      border-radius: 20px;
+      appearance: none;
+      background-image: url('expand-more.png');
+      background-repeat: no-repeat;
+      background-position-x: 60px;
+      background-position-y: 6px;
+      background-color: white;
+    }
+
+    .sign-in {
+      /* margin-top: 2.5vh; */
+      display: inline-flex;
+      height: 24px;
+      margin-left: 4vw;
+      width: 92.15px;
+      border-radius: 2vw;
+      background-color: rgb(224, 62, 62);
+      color: white;
+      font-size: medium;
+      border: none;
+      justify-content: center;
+    }
+
+    .sign-in:focus {
+      border-color: transparent;
+      outline: none;
+    }
+
+    .sign-in:hover {
+      background-color: rgb(214, 13, 13);
+      cursor: pointer;
+    }
+
+    #Search:focus {
+      border-color: transparent;
+      outline: none;
+    }
+
+    .nav-bar-2 {
+      display: flex;
+      height: 50px;
+      background-color: #394a5177;
+    }
+
+    .links {
+      color: black;
+      margin-left: 8vw;
+      margin-top: 1.5vh;
+    }
+
+    .links a {
+      font-size: small;
+      text-decoration: none;
+      padding-left: 5vw;
+      color: black;
+    }
+
+    .links a:hover {
+      color: white;
+    }
+
+    .carousel {
+      display: flex;
+      overflow: hidden;
+      justify-content: center;
+    }
+
+    #s1 {
+      float: left;
+      margin-left: -80%;
+    }
+
+    #s2 {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+
+    #s3 {
+      float: right;
+      margin-right: -80%;
+    }
+
+    .BookIt_Exclusive {
+      display: block;
+      margin: auto;
+      width: max-content;
+    }
+
+    .Cards {
+      width: 225px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 10%;
+      margin-top: 2vh;
+    }
+
+    #BE {
+      position: relative;
+      display: inline;
+      font-size: medium;
+      height: min-content;
+      top: 3.5px;
+    }
+
+    #BE1 {
+      display: inline-block;
+    }
+
+    #BE2 {
+      margin-left: 4vw;
+      display: inline-block;
+    }
+
+    #BE3 {
+      margin-left: 4vw;
+      display: inline-block;
+    }
+
+    #BE4 {
+      margin-left: 4vw;
+      display: inline-block;
+    }
+
+    .View_More {
+      display: inline-flex;
+      width: 107px;
+      height: 24px;
+      margin-left: 1vw;
+      background-color: #FDC57B;
+      border-radius: 20px;
+      color: white;
+      text-align: center;
+      align-items: center;
+      margin-top: 3vh;
+    }
+
+    #view-more-text {
+      display: inline;
+    }
+
+    #search-text {
+      margin-top: 0.25vh;
+    }
+
+    .raise-on-hover:hover {
+      margin-top: -2vh;
+      border: 2px solid blue;
+    }
+
+    .Kids-Choice {
+      display: block;
+      width: max-content;
+      margin: auto;
+    }
+
+    #KC {
+      display: inline;
+      position: relative;
+      top: 3.5px;
+      font-size: medium;
+      height: min-content;
+    }
+
+    #KC1 {
+      display: inline-block;
+    }
+
+    #KC2 {
+      margin-left: 4vw;
+      display: inline-block;
+    }
+
+    #KC3 {
+      margin-left: 4vw;
+      display: inline-block;
+    }
+
+    #KC4 {
+      margin-left: 4vw;
+      display: inline-block;
+    }
+
+    .Laugh-Out-Loud {
+      display: block;
+      width: max-content;
+      margin: auto;
+    }
+
+    #LOL {
+      display: inline;
+      position: relative;
+      top: 3.5px;
+      font-size: medium;
+      height: min-content;
+    }
+
+    #LOL1 {
+      display: inline-block;
+    }
+
+    #LOL2 {
+      margin-left: 4vw;
+      display: inline-block;
+    }
+
+    #LOL3 {
+      margin-left: 4vw;
+      display: inline-block;
+    }
+
+    #LOL4 {
+      margin-left: 4vw;
+      display: inline-block;
+    }
+
+    #next {
+      margin-top: 22vh;
+      margin-left: -43vw;
+      height: 4vh;
+      z-index: 20;
+      background-color: #39393963;
+      outline: none;
+    }
+
+    #prev {
+      margin-top: 22vh;
+      height: 4vh;
+      z-index: 20;
+      background-color: #39393963;
+      outline: none;
+    }
+
+    .footer {
+      display: flex;
+      flex-wrap: wrap;
+      height: auto;
+      background-color: #394A51;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+
+    .footer ul {
+      font-family: Playfair display, sans-serif;
+      color: white;
+      line-height: 25px;
+      font-size: 16px;
+    }
+
+    #sign-in-icon {
+      display: none;
+    }
+
+    .mobile-img {
+      display: none;
+    }
+
+    #Search-buttonm {
+      display: none;
+    }
+
+    @media only screen and (max-width: 1280px) {
+      button#Search-button {
+        width: 35px;
+        right: 40px;
+      }
+
+      #search-text {
+        display: none;
+      }
+    }
+
+    @media only screen and (max-width: 1120px) {
+      .posters {
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        width: 100vw;
+      }
+    }
+
+    @media only screen and (max-width: 1024px) and (min-width: 500px) {
+      #s1 {
+        display: none;
+      }
+
+      #s3 {
+        display: none;
+      }
+
+      #footer {
+        flex-direction: column;
+      }
+    }
+
+    @media only screen and (max-width: 896px) {
+      #s2 {
+        width: 100vw;
+        object-fit: contain;
+      }
+
+      #Search-button {
+        display: none;
+      }
+
+      .nav-bar {
+        justify-content: space-evenly;
+      }
+
+      .sign-in {
+        margin: 0%;
+      }
+
+      #Search {
+        margin: 0%;
+        width: 200px;
+      }
+
+      .nav-bar img {
+        margin: 0%;
+      }
+
+      #city {
+        margin: 0%;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      .footer {
+        height: auto;
+        flex-direction: column;
+      }
+    }
+
+    @media only screen and (max-width: 500px) {
+      #city {
+        display: none;
+      }
+
+      #Search {
+        display: none;
+      }
+
+      #sign-in-txt {
+        display: none;
+      }
+
+      #search-text {
+        display: none;
+      }
+
+      #Search-buttonm {
+        display: inline-flex;
+        width: 35px !important;
+        position: absolute !important;
+        right: 15vw !important;
+        background-color: black;
+        color: white;
+        border: none !important;
+      }
+
+      #sign-in-icon {
+        display: inline-block;
+      }
+
+      .sign-in {
+        width: 35px;
+        position: absolute;
+        right: 2vw;
+      }
+
+      .footer {
+        height: auto;
+      }
+
+      .nav-bar {
+        justify-content: center;
+      }
+
+      .nav-bar-2 {
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .links {
+        margin: 0%;
+      }
+
+      #s1 {
+        width: 100vw;
+        object-fit: contain;
+      }
+
+      #s2 {
+        width: 100vw;
+        object-fit: contain;
+      }
+
+      #s3 {
+        width: 100vw;
+        object-fit: contain;
+      }
+
+      .Cards {
+        width: 180px;
+        height: 280px;
+      }
+
+      .footer ul {
+        font-size: small;
+      }
+
+      .footer {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class='nav-bar' id='nav-bar1'>
+    <img src='Bookit.png' alt="Bookit" id='logo'>
+    <input type='text' placeholder="Search for movies, sports, events, shows and More" id='Search'>
+    <button id='Search-button'><i class="material-icons-outlined" id='mag'>search</i><span
+        id='search-text'>Search</span></button>
+    <button id='Search-buttonm' onclick="searchbar()"><i class="material-icons-outlined" id='mag'>search</i></button>
+    <select id='city'>
+      <!--<span class="material-icons-outlined">
+          expand_more
+        </span>--->
+      <option>Chennai</option>
+      <option>Mumbai</option>
+      <option>Kolkata</option>
+      <option>Coimbatore</option>
+      <option>Pune</option>
+      <option>Delhi</option>
+      <option>Banglore</option>
+      <option>Hyderabad</option>
+    </select>
+    <button class='sign-in' id='sign-in-btn' onclick='redirect("/sign-in.html")'><span class="material-icons-outlined"
+        id='sign-in-icon'>
+        account_circle
+      </span><span id='sign-in-txt'>Sign In</span></button>
+  </div>
+  <div class='nav-bar-2'>
+    <div class='links'>
+      <a href='\movies.html'>Movies</a>
+      <a href='\movies.html'>Sports</a>
+      <a href='\movies.html'>Events</a>
+      <a href='\movies.html'>Shows</a>
+    </div>
+  </div>
+  <script>
+    function changefocus() {
+      var path = document.getElementById('s2').src
+      document.getElementById('s2').src = document.getElementById('s3').src
+      document.getElementById('s3').src = document.getElementById('s1').src
+      document.getElementById('s1').src = path
+    }
+    setInterval(changefocus, 3000)
+    function prevslide() {
+      var path = document.getElementById('s2').src
+      document.getElementById('s2').src = document.getElementById('s1').src
+      document.getElementById('s1').src = document.getElementById('s3').src
+      document.getElementById('s3').src = path
+    }
+    function nextslide() {
+      var path = document.getElementById('s2').src
+      document.getElementById('s2').src = document.getElementById('s3').src
+      document.getElementById('s3').src = document.getElementById('s1').src
+      document.getElementById('s1').src = path
+      sleep(2000)
+    }
+    function searchbar() {
+      document.getElementById('Search').style.display = "flex";
+      document.getElementById('Search').style.width = "80vw";
+      document.getElementById('logo').style.display = "none";
+      document.getElementById('Search-buttonm').style.display = "none";
+      document.getElementById('nav-bar1').style.justifyContent = "space-between";
+    }
+    function redirect(link) {
+      location.replace(link)
+    }
+  </script>
+  <div class='carousel'>
+    <!-- <button id ='prev' onclick = "prevslide()"><span class="material-icons-outlined">arrow_back_ios</span></button> -->
+    <img src='sidconcertr.jpg' id='s1'>
+    <img src='rcb vs  mir.png' id='s2'>
+    <img src='sa_aravindr.jpg' id='s3'>
+    <!-- <button id = 'next' onclick = "nextslide()"><span class="material-icons-outlined">arrow_forward_ios</span></button> -->
+  </div>
+  <div class="BookIt_Exclusive">
+    <span id='BE'>BookIt Exclusive:</span>
+    <button class='View_More'><span id='view-more-text'>View More</span><span
+        class="material-icons-outlined">arrow_forward</span></button>
+    <div class='posters'>
+      <a href='theatre.html' style='color: black; text-decoration: none; cursor: pointer;'>
+        <table id='BE1'>
+          <caption style='caption-side:bottom;'>Godzilla vs Kong</caption>
+          <tr>
+            <td><img src='godzilla vs kong.jpg' alt="godzilla vs kong" class='raise-on-hover Cards'></td>
+          </tr>
+        </table>
+      </a>
+      <a href='theatre.html' style='color: black; text-decoration: none; cursor: pointer;'>
+        <table id='BE2'>
+          <caption style='caption-side:bottom;'>Justice League</caption>
+          <tr>
+            <td><img src='justice league.jpg' alt="justice league" class='raise-on-hover Cards'></td>
+          </tr>
+        </table>
+      </a>
+      <a href='theatre.html' style='color: black; text-decoration: none; cursor: pointer;'>
+        <table id='BE3'>
+          <caption style='caption-side:bottom;'>Alex in the wonderland</caption>
+          <tr>
+            <td><img src='alexwl.jpg' alt="Alex in the wonderland" class='raise-on-hover Cards'></td>
+          </tr>
+        </table>
+      </a>
+      <a href='theatre.html' style='color: black; text-decoration: none; cursor: pointer;'>
+        <table id='BE4'>
+          <caption style='caption-side:bottom;'>Sports Fest</caption>
+          <tr>
+            <td><img src='sportsev.jpg' alt="sports Fest" class='raise-on-hover Cards'></td>
+          </tr>
+        </table>
+      </a>
+    </div>
+  </div>
+  <div class="Kids-Choice">
+    <span id='KC'>Kids Choice:</span>
+    <button class='View_More'><span id='view-more-text'>View More</span><span
+        class="material-icons-outlined">arrow_forward</span></button>
+    <div class='posters'>
+      <a href='theatre.html' style='color: black; text-decoration: none; cursor: pointer;'>
+        <table id='KC1'>
+          <caption style='caption-side:bottom;'>Food Fest</caption>
+          <tr>
+            <td><img src='Food_Fest.jpg' alt="Food_Fest" class='raise-on-hover Cards'></td>
+          </tr>
+        </table>
+      </a>
+      <a href='theatre.html' style='color: black; text-decoration: none; cursor: pointer;'>
+        <table id='KC2'>
+          <caption style='caption-side:bottom;'>Summer Stories</caption>
+          <tr>
+            <td><img src='summer_stories.jpg' alt="Summer stories" class='raise-on-hover Cards'></td>
+          </tr>
+        </table>
+      </a>
+      <a href='theatre.html' style='color: black; text-decoration: none; cursor: pointer;'>
+        <table id='KC3'>
+          <caption style='caption-side:bottom;'>Doodle</caption>
+          <tr>
+            <td><img src='doodle.jpg' alt="doodle" class='raise-on-hover Cards'></td>
+          </tr>
+        </table>
+      </a>
+      <a href='theatre.html' style='color: black; text-decoration: none; cursor: pointer;'>
+        <table id='KC4'>
+          <caption style='caption-side:bottom;'>Acting</caption>
+          <tr>
+            <td><img src='acting.jpg' alt="acting" class='raise-on-hover Cards'></td>
+          </tr>
+        </table>
+      </a>
+    </div>
+  </div>
+  <div class="Laugh-Out-Loud">
+    <span id='LOL'>Laugh Out Loud:</span>
+    <button class='View_More'><span id='view-more-text'>View More</span><span
+        class="material-icons-outlined">arrow_forward</span></button>
+    <div class='posters'>
+      <a href='theatre.html' style='color: black; text-decoration: none; cursor: pointer;'>
+        <table id='LOL1'>
+          <caption style='caption-side:bottom;'>Alex In Wonderland</caption>
+          <tr>
+            <td><img src='alexwl.jpg' alt="Alex In Wonderland" class='raise-on-hover Cards'></td>
+          </tr>
+        </table>
+      </a>
+      <a href='theatre.html' style='color: black; text-decoration: none; cursor: pointer;'>
+        <table id='LOL2'>
+          <caption style='caption-side:bottom;'>SA Aravind</caption>
+          <tr>
+            <td><img src='sacard.jpg' alt="SA Aravind" class='raise-on-hover Cards'></td>
+          </tr>
+        </table>
+      </a>
+      <a href='theatre.html' style='color: black; text-decoration: none; cursor: pointer;'>
+        <table id='LOL3'>
+          <caption style='caption-side:bottom;'>Kenny Sebastin</caption>
+          <tr>
+            <td><img src='kenny.jpg' alt="Kenny Sebastin" class='raise-on-hover Cards'></td>
+          </tr>
+        </table>
+      </a>
+      <a href='theatre.html' style='color: black; text-decoration: none; cursor: pointer;'>
+        <table id='LOL4'>
+          <caption style='caption-side:bottom;'>Vada Poche</caption>
+          <tr>
+            <td><img src='vada poche.jpg' alt="Vada Poche" class='raise-on-hover Cards'></td>
+          </tr>
+        </table>
+      </a>
+    </div>
+  </div>
+  <div class='footer'>
+    <div class="contactus">
+      <ul type=none>
+        <li>Contact Us</li>
+        <li>+91 9999988888</li>
+        <li>enquiries@bootkit.com</li>
+      </ul>
+    </div>
+    <div class='enquiries'>
+      <ul type='none'>
+        <li>Payment and Billing</li>
+        <li>Returns</li>
+        <li>FAQ</li>
+        <li>Customer Forum</li>
+      </ul>
+    </div>
+    <div class='about us'>
+      <ul type='none'>
+        <li>About Us</li>
+        <li>Work with Us</li>
+        <li>Privacy Policy</li>
+        <li>Terms and Conditions</li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>

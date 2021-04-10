@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: playfair display, sans-serif;
+}
+.sign-in-form{
+    width: 350px;
+    padding: 20px;
+    margin: 8% auto 0;
+    border: 1px solid black;
+
+    
+}
+h2{
+    text-align: center;
+    margin-bottom: 30px;
+}
+button{
+    border-radius: 5px;
+    margin-top: 10px ;
+    padding: 15px;
+    outline: none;
+    width: 100%;
+    border:1px solid;
+    background-color: white;
+    font-weight: bold;
+}
+#fb:hover,#google:hover,#mail:hover{
+    background-color:#f2f2f2;
+    border:none;
+    cursor: pointer;
+}
+.or{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+input{
+    margin-inline-start: 50px;
+    width: 70%;
+    border: 0;
+    size: 40px;
+    margin-bottom: 30px;
+    font-size: 15px; 
+    border-bottom: 1px solid black;
+}
+.tandc{
+    font-size: 12px;
+    text-align: center;
+
+}
+.sign-in-form img{
+    width: 30px;
+    height: 30px;
+}
+
+#fb-img,#g-img,#mail-img{
+    position: relative;
+    left: 20px;
+    top: -40px;
+}
